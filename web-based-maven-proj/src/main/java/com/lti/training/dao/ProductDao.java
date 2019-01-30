@@ -1,5 +1,13 @@
 package com.lti.training.dao;
 
-public class ProductDao {
+import java.util.List;
 
+import com.lti.training.model.Product;
+
+public class ProductDao {
+	
+	public List<Product> fetchProduct(int from, int to) {
+		return null;
+		
+	}
 }
