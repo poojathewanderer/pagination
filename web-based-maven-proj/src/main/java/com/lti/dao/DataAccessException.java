@@ -1,5 +1,4 @@
-package com.lti.training.dao;
-
+package com.lti.dao;
 
 public class DataAccessException extends Exception {
 

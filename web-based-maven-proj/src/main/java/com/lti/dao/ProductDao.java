@@ -1,4 +1,4 @@
-package com.lti.training.dao;
+package com.lti.dao;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import com.lti.training.model.Product;
+import com.lti.model.Product;
+
 
 public class ProductDao {
 

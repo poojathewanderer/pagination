@@ -1,5 +1,4 @@
-package com.lti.training.servlet;
-
+package com.lti.servlet;
 import java.io.IOException;
 import java.util.List;
 
@@ -10,9 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.lti.training.dao.DataAccessException;
-import com.lti.training.dao.ProductDao;
-import com.lti.training.model.Product;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lti.dao.DataAccessException;
+import com.lti.dao.ProductDao;
+import com.lti.model.Product;
+
 
 
 public class ProductControllerServlet extends HttpServlet {
@@ -44,9 +45,9 @@ public class ProductControllerServlet extends HttpServlet {
 			System.out.println(currentPosition);
 			List<Product> currentProducts = dao.fetchProduct(currentPosition, currentPosition + pageSize);
 			request.setAttribute("currentProducts", currentProducts);
-			RequestDispatcher dispatcher =
-					request.getRequestDispatcher("viewProducts.jsp");
-			dispatcher.forward(request, response);
+			
+			ObjectMapper objectMapper = new ObjectMapper();
+			String currentProducts.JSON = objectMapper.writeValueAsString(currentProducts);
 			
 		} catch (DataAccessException e) {e.printStackTrace();}
 		

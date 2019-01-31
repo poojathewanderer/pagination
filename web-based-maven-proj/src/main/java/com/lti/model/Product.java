@@ -1,4 +1,4 @@
-package com.lti.training.model;
+package com.lti.model;
 
 public class Product {
 	private int id;
